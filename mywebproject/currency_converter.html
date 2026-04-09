@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .converter-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            width: 400px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .result {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter-box">
+    <h2>Currency Converter</h2>
+    
+    <label>Enter Amount in FRW:</label>
+    <input type="number" id="amount" placeholder="Enter amount...">
+    
+    <label>Select Currency:</label>
+    <select id="currency">
+        <option value="USD">US Dollar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">British Pound (GBP)</option>
+    </select>
+    
+    <label>Exchange Rate:</label>
+    <input type="number" id="rate" placeholder="Enter exchange rate...">
+    
+    <button onclick="convertCurrency()">CONVERT</button>
+    
+    <div class="result" id="result">
+        Result Here ....
+    </div>
+</div>
+
+<script>
+    function convertCurrency() {
+        // Get values from input fields
+        let amount = document.getElementById("amount").value;
+        let rate = document.getElementById("rate").value;
+        let currency = document.getElementById("currency").value;
+        
+        // Check if fields are empty
+        if(amount == "" || rate == "") {
+            document.getElementById("result").innerHTML = "Please enter amount and rate!";
+            return;
+        }
+        
+        // Do the conversion
+        let convertedAmount = amount / rate;
+        
+        // Display the result
+        document.getElementById("result").innerHTML = 
+            amount + " FRW = " + convertedAmount.toFixed(2) + " " + currency;
+    }
+</script>
+
+</body>
+</html>

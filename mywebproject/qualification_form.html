@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Qualification Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        .courses {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .courses label {
+            margin-right: 15px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        
+        button[type="reset"] {
+            background-color: #f44336;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>QUALIFICATION</h1>
+    
+    <form action="save_qualification.php" method="post">
+        <table>
+            <tr>
+                <th>SL.No.</th>
+                <th>Examination</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Year of Passing</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Class X</td>
+                <td><input type="text" name="board10" maxlength="10" placeholder="Board name"></td>
+                <td><input type="number" step="0.01" name="percentage10" placeholder="0.00"></td>
+                <td><input type="text" name="year10" placeholder="YYYY"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Class XII</td>
+                <td><input type="text" name="board12" maxlength="10" placeholder="Board name"></td>
+                <td><input type="number" step="0.01" name="percentage12" placeholder="0.00"></td>
+                <td><input type="text" name="year12" placeholder="YYYY"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Graduation</td>
+                <td><input type="text" name="boardgrad" maxlength="10" placeholder="University/Board"></td>
+                <td><input type="number" step="0.01" name="percentagegrad" placeholder="0.00"></td>
+                <td><input type="text" name="yeargrad" placeholder="YYYY"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Masters</td>
+                <td><input type="text" name="boardmaster" maxlength="10" placeholder="University/Board"></td>
+                <td><input type="number" step="0.01" name="percentagemaster" placeholder="0.00"></td>
+                <td><input type="text" name="yearmaster" placeholder="YYYY"></td>
+            </tr>
+        </table>
+        
+        <div class="courses">
+            <strong>COURSES APPLIED FOR:</strong><br><br>
+            <label><input type="radio" name="course" value="BCA"> BCA</label>
+            <label><input type="radio" name="course" value="B.Com"> B.Com</label>
+            <label><input type="radio" name="course" value="B.Sc"> B.Sc</label>
+            <label><input type="radio" name="course" value="B.A"> B.A</label>
+        </div>
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</div>
+
+</body>
+</html>
